@@ -3,12 +3,12 @@
 #include<unordered_map>
 #include<list>
 using namespace std;
-
+template <typename T>
 class Graph{
   public:
-  unordered_map<int,list<pair <int,int>> > adjlist;
+  unordered_map<T,list<pair <T,T>> > adjlist;
 
-  void addedge(int u,int v,int weight,bool direction){
+  void addedge(T u,T v,T weight,bool direction){
     //direction 0 -> undirected edge
     //direction 1 -> directed edge
 
@@ -31,7 +31,7 @@ class Graph{
 };
 
 int main() {
-  Graph g;
+  Graph<int> g;
   g.addedge(0,1,5,0);
   g.addedge(1,2,6,0);
   g.addedge(0,2,7,0);
